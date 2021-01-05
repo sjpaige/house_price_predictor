@@ -1,0 +1,1 @@
+This folder just holds the original csv file that was used to populate the database with the raw data.

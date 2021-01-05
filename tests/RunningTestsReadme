@@ -1,0 +1,3 @@
+RUNNING TESTS README
+
+you must set the path for the database be the absolute path not the relative path that the runtime applicatoin uses.
