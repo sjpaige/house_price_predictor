@@ -32,39 +32,6 @@ def start(window, font_styles, photo):
             MainWindow.start(window, loading_bar)
         else:
             messagebox.showwarning("Login Error", "wrong username or password")
-    # # Register a new user
-    # def register():
-    #     # Send the user details to the database
-    #     def save():
-    #         conn = dc.connect()
-    #         username = reg_username_entry.get()
-    #         password = reg_password_entry.get()
-    #         dc.register_user(username, password, conn)
-    #         register_frame.destroy()
-    #         conn.close()
-    #
-    #     # The fields that allow the entry of a new user account
-    #     register_frame = ttk.Frame(window)
-    #     reg_username_field = ttk.Label(
-    #         master=register_frame,
-    #         text="username"
-    #     )
-    #     reg_username_field.config(font=font_styles)
-    #     reg_username_entry = ttk.Entry(master=register_frame, width=30)
-    #     reg_username_field.pack()
-    #     reg_username_entry.pack(side="top")
-    #
-    #     reg_password_field = ttk.Label(
-    #         master=register_frame,
-    #         text="password"
-    #     )
-    #     reg_password_field.config(font=font_styles)
-    #     reg_password_entry = ttk.Entry(master=register_frame, show='*', width=30)
-    #     reg_password_field.pack()
-    #     reg_password_entry.pack(side="top")
-    #     register_frame.pack()
-    #     save_btn = ttk.Button(master=register_frame, text="save", command=save)
-    #     save_btn.pack(side="bottom")
 
     # The login page
     login_frame = ttk.Frame(window, relief=tk.FLAT, borderwidth=5)
@@ -86,6 +53,7 @@ def start(window, font_styles, photo):
     username_entry = ttk.Entry(master=login_frame, width=30)
     username_field.pack()
     username_entry.pack(side="top")
+    username_entry.insert(tk.END,'default')
 
     # Password field and entry
     password_field = ttk.Label(
@@ -97,6 +65,7 @@ def start(window, font_styles, photo):
     password_entry = ttk.Entry(master=login_frame, show='*', width=30)
     password_field.pack()
     password_entry.pack(side="top")
+    password_entry.insert(tk.END, 'default')
 
     # Login frame controls
     button_frame = ttk.Frame(master=login_frame, relief=tk.FLAT, borderwidth=5)
@@ -105,10 +74,6 @@ def start(window, font_styles, photo):
     # Exit button
     exit_btn = ttk.Button(master=button_frame, text="exit", command=exit_app)
     exit_btn.pack(side="left")
-
-    # # Register button
-    # register_btn = ttk.Button(master=button_frame, text="register", command=register)
-    # register_btn.pack(side="left")
 
     # Login button
     login_btn = ttk.Button(master=button_frame, text="login", command=login)

@@ -86,7 +86,7 @@ def login_user(username, password, connection):
     :return: the bool validity of the login.
     """
     query_result = pd.read_sql(f"SELECT * FROM users WHERE username='{username}' AND password='{password}'",connection)
-
+    print(query_result)
     # The password fails if the username and login are not valid int he database.
     if query_result.empty:
         return False  # return false when the result is empty.
